@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="public/manifest.json">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="public/icons/icon-192x192.png">
 <title>NexCart — Best Prices, COD Available</title>
 
 <!-- EmailJS SDK -->
@@ -30,7 +33,13 @@
   *{box-sizing:border-box; margin:0; padding:0;}
 
   html{scroll-behavior:smooth;}
-
+  <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('public/sw.js');
+  });
+}
+</script>
   body{
     font-family:'Inter', sans-serif;
     background:var(--bg);
